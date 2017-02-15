@@ -1,6 +1,6 @@
 " Install vim-plug
 set nocompatible
-call plug#begin('!/.vim/plugged')
+call plug#begin('~/.vim/plugged')
 
 
 " UI
