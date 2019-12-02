@@ -1,13 +1,19 @@
 " Install vim-plug
 set nocompatible
-call plug#begin('~/.vim/plugged')
-
+call plug#begin()
 
 " UI
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
 let g:airline_powerline_fonts = 1
-let g:airline#extensions#syntastic#enabled = 1
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#tagbar#enabled = 1
+let g:airline_skip_empty_sections = 1
+
+" UI
+Plug 'airblade/vim-gitgutter'
+Plug 'vim-airline/vim-airline'
+let g:airline_powerline_fonts = 1
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#tagbar#enabled = 1
 let g:airline_skip_empty_sections = 1
@@ -18,7 +24,7 @@ let g:rehash256 = 1
 
 " Feature
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
-" Plug 'Shougo/denite.nvim', {'do' : ':UpdateRemotePlugins'}
+Plug 'Shougo/denite.nvim', {'do' : ':UpdateRemotePlugins'}
 Plug 'majutsushi/tagbar'
 let g:tagbar_show_linenumbers = 1
 Plug 'mbbill/undotree'
@@ -31,16 +37,7 @@ endif
 Plug 'SirVer/ultisnips'
 let g:UltiSnipsJumpForwardTrigger="<Tab>"
 Plug 'honza/vim-snippets'
-" Plug 'Shougo/deoplete.nvim', {'do' : ':UpdateRemotePlugins'}
 let g:deoplete#enable_at_startup = 1
-Plug  'scrooloose/syntastic'
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
 
 " Hotkey
 Plug 'vim-scripts/auto-pairs'
@@ -97,7 +94,6 @@ cab Set set
 " Setting
 let mapleader=" "                      " leader key
 syntax on                              " Color syntax
-" color molokai                          " Theme
 set backspace=start,eol,indent         " Backspcae
 set clipboard=unnamed                  " Clipboard
 set cursorline                         " height corrent line
@@ -107,7 +103,7 @@ set hls                                " search heightlight
 set ignorecase                         " ignore case in search
 set incsearch                          " search back
 set laststatus=2                       " Always show the statusline
-set mouse=a                            " Use mouse
+" set mouse=a                            " Use mouse
 set number                             " Line number
 set ruler                              " show line info
 set scrolloff=5                        " scroll while close under
